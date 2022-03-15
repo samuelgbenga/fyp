@@ -265,28 +265,68 @@
     });
   });
 })();
-/* my own addition */
-// select dropdown button
 
-function dropDown(e) {
-  // console.log(dropDownBox);
-  var element = document.querySelectorAll("#dropdownbox");
-  // console.log(element);
-  for (let i = 0; i < element.length; i++) {
-    let item = element[i];
-    if (item.classList[0] === e.classList[1]) {
-      // console.log(item.classList[0]);
-      item.classList.toggle("displaydb");
+let elementList = document.querySelectorAll(".w-100");
+let onClickElements = document.querySelectorAll(".dropdown");
+
+// adding event handler to the toggle button
+// onClickElments[0].addEventListener("click", function () {
+//   if (!elementList[0].classList.contains("drop")) {
+//     elementList[0].classList.add("drop");
+//   } else {
+//     elementList[0].classList.remove("drop");
+//   }
+//   // elementList[0].classList.add("drop");
+// });
+
+// i want to use loop to solve this problem now
+// console.log(onClickElements);
+
+onClickElements.forEach((elem) => {
+  elem.addEventListener("click", (e) => {
+    if (
+      !e.target.parentElement.nextElementSibling.nextElementSibling.classList.contains(
+        "drop"
+      )
+    ) {
+      e.target.parentElement.nextElementSibling.nextElementSibling.classList.add(
+        "drop"
+      );
+    } else {
+      e.target.parentElement.nextElementSibling.nextElementSibling.classList.remove(
+        "drop"
+      );
     }
+  });
+});
 
-    // console.log(e.classList[1]);
-  }
-  // if (element.classList[0] === e.classList[1]) {
-  //   element.classList.toggle("displaydb");
-  // }
-  // console.log(element.classList[0]);
-  // console.log(e.classList[1]);
-}
+// onClickElements.addEventListener("click", (e) => {
+//   console.log("you clicked me");
+// });
+
+/* my own addition */
+
+// i am creating a toggle list deal with it
+// select dropdown button
+// function dropDown(e) {
+//   // console.log(dropDownBox);
+//   var element = document.querySelectorAll("#dropdownbox");
+//   // console.log(element);
+//   for (let i = 0; i < element.length; i++) {
+//     let item = element[i];
+//     if (item.classList[0] === e.classList[1]) {
+//       // console.log(item.classList[0]);
+//       item.classList.toggle("displaydb");
+//     }
+
+//     // console.log(e.classList[1]);
+//   }
+//   // if (element.classList[0] === e.classList[1]) {
+//   //   element.classList.toggle("displaydb");
+//   // }
+//   // console.log(element.classList[0]);
+//   // console.log(e.classList[1]);
+// }
 
 // const dropDown = document.getElementsByClassName("dropdown");
 // dropDown.onClick = function () {
@@ -297,3 +337,5 @@ function dropDown(e) {
 //   console.log(dropDown);
 //   console.log(1);
 // });
+
+// creating a nice toggle list

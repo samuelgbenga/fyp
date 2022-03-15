@@ -489,10 +489,20 @@ h1 {
 .result .container {
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: whitesmoke;
   transform: translateY(-40px);
-  padding-top: 50px;
-  overflow: scroll;
+  padding-top: 20px;
+  overflow: none;
+}
+.result .row {
+  width: 90%;
+  margin-left: 10px;
+}
+.result .progress {
+  width: 90%;
+}
+.result .col-3 {
+  font-size: 18px;
 }
 .result .title {
   margin: 20px;
@@ -500,41 +510,52 @@ h1 {
   text-align: center;
   font-size: 30px;
 }
-.result .attacks {
-  margin: auto;
+.w-100 {
+  margin: 7px 0;
+  width: 60%;
+  max-height: 0;
+
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: max-height 0.7s linear;
+  -moz-transition: max-height 0.7s linear;
+  -ms-transition: max-height 0.7s linear;
+  -o-transition: max-height 0.7s linear;
+  transition: max-height 0.7s linear;
 }
-.result .progress {
-  margin: 10px auto;
-  width: 100%;
-  display: flex;
+.w-100 ul {
+  list-style: none;
 }
+.w-100.drop {
+  max-height: 500px;
+  padding: 7px 6px;
+}
+
 .result .dropdown {
   cursor: pointer;
 }
-.result .attacks {
-  text-align: end;
+@media (max-width: 1024px) {
+  .result .col-3 {
+    font-size: 13px;
+  }
 }
-@media (min-width: 1024px) {
-  .result .progress {
-    width: 80%;
+@media (min-width: 1040px) {
+  .result .col-3 {
+    padding-left: 40px;
   }
 }
 
-.hidedropbox {
-  width: 80vw;
-  height: 50vh;
-  margin: 0 auto;
-  display: none;
+@media (max-width: 750px) {
+  .result .col-3 {
+    font-size: 9px;
+  }
+  .result .progress {
+    width: 100%;
+  }
 }
-.displaydb {
-  background: white;
-  border: solid rgb(94, 93, 93) 1px;
-  width: 80vw;
-  height: 50vh;
-  margin: 0 auto;
-  transition: 0.5s linear;
-  overflow: hidden;
-}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
